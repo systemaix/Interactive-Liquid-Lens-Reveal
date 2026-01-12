@@ -1,0 +1,47 @@
+:root {
+    --bg-dark: #050505;
+}
+
+body, html {
+    margin: 0;
+    height: 100vh;
+    background: var(--bg-dark);
+    font-family: 'Syncopate', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.reveal-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000') center/cover;
+    /* This starts hidden and is revealed by the mask */
+    -webkit-mask-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%), black 100px, transparent 150px);
+    mask-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%), black 100px, transparent 150px);
+}
+
+/* This adds the "Gooey" liquid feel to the mask edges */
+.mask-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: url('#liquid-mask');
+    pointer-events: none;
+}
+
+.ui-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+h2 { font-size: 4rem; margin: 0; letter-spacing: 10px; }
